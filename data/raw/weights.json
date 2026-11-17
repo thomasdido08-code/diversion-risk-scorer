@@ -1,0 +1,10 @@
+{
+  "weights": {
+    "governance": 0.4,
+    "conflict": 0.2,
+    "embargo": 0.1,
+    "neighbourhood": 0.15,
+    "att": 0.15
+  },
+  "built": "2026-10-30"
+}

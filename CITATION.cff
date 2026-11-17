@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this data or analysis, please cite it as below."
+title: "Diversion Risk Scorer"
+abstract: "Scores 205 states on the risk of arms diversion, operationalising Criterion 7 of EU Common Position 2008/944/CFSP from governance, conflict, embargo, neighbourhood and Arms Trade Treaty components."
+authors:
+  - family-names: "Di Domenico"
+    given-names: "Thomas"
+date-released: 2026-10-30
+version: "2026-10-30"
+license: CC-BY-4.0
+repository-code: "https://github.com/thomasdido08-code/diversion-risk-scorer"
+keywords:
+  - arms control
+  - export controls
+  - arms diversion
+  - EU Common Position
+  - Arms Trade Treaty
