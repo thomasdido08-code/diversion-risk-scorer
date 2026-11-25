@@ -55,15 +55,16 @@ The index cannot see deliberate re-transfer: governance data measures whether a 
 - **Weight.** 10%, taken from the other five components in proportion, so their ratios stay as they are. 5% and 15% are shown for comparison. The weight was set before looking at where the UAE lands and was not changed afterwards.
 - **No circularity.** The component uses only reports published to the end of 2020. Validation of the component may use only re-transfer cases from 2021–2025 reports and CAR reports.
 
-**Result, with the coding done so far** (Libya only, partly read; so this is a test of the mechanics, not a finding):
+**Result, with the coding done so far** (Libya, Yemen and South Sudan, partly read; so this is a test of the mechanics, not a finding):
 
 | State | Reports with a finding (to 2020) | Rank now | 5% | 10% | 15% |
 |---|---|---|---|---|---|
 | United Arab Emirates | 2 | 134 | 107 | 83 | 70 |
+| Uganda | 2 | 28 | 19 | 13 | 8 |
 | Qatar | 1 | 100 | 89 | 79 | 74 |
 | Jordan | 1 | 54 | 42 | 35 | 30 |
-| Türkiye | 1 | 41 | 36 | 29 | 21 |
-| Sudan | 1 | 1 | 1 | 1 | 1 |
+| Türkiye | 1 | 41 | 36 | 29 | 22 |
+| Sudan | 4 | 1 | 1 | 1 | 1 |
 
 The top 10 does not change at any of the three weights.
 

@@ -37,14 +37,15 @@ What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to de
 
 **Proposal.** A sixth component: UN Panel reports that find a state's government transferred arms in breach of an embargo. Scaled 0 / 0.5 (one report) / 1 (two or more). Weight 10%, taken from the others in proportion. It uses reports to 2020 only, so 2021–2025 cases stay free to test it.
 
-**Before and after** (partial Libya coding, so this tests the mechanics, not a finding):
+**Before and after** (partial coding of Libya, Yemen and South Sudan, so this tests the mechanics, not a finding):
 
 | State | Now | 5% | 10% | 15% |
 |---|---|---|---|---|
 | UAE | 134 | 107 | 83 | 70 |
 | Qatar | 100 | 89 | 79 | 74 |
 | Jordan | 54 | 42 | 35 | 30 |
-| Türkiye | 41 | 36 | 29 | 21 |
+| Türkiye | 41 | 36 | 29 | 22 |
+| Uganda | 28 | 19 | 13 | 8 |
 
 **It does not fix the blind spot**, and that is documented as a limit. A component at weight *w* adds at most 100*w* points. The UAE's other components are low (score 29.8), so at 10% it peaks at 36.8, below "Elevated". Reaching the top 50 would take 20% or more, which would be tuning to one case. I did not tune.
 
