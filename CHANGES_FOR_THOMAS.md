@@ -61,4 +61,19 @@ Governance and conflict correlate at 0.66 (Spearman 0.77), partly by constructio
 
 ## Ready to go public?
 
-**Not yet.** Before publishing I would: (1) decide the US ATT question; (2) get the validation to at least the re-transfer-heavy regimes, so that "blind validation under way" is backed by real numbers; (3) do a publication check like the Teardown Index's (licences, links, Pages paths). If you want it public for the 10 December pitch anyway, it is honest as it stands: the README says what is done and what is not.
+**Not yet.** Before publishing I would: (1) decide the US ATT question; (2) decide the Iran question below; (3) get the validation to at least the re-transfer-heavy regimes, so that "blind validation under way" is backed by real numbers.
+
+**Publication check (done 25 Nov):** no secrets or local paths; licence files present for the code, d3, topojson and the IBM Plex fonts; every script, style and data path in the page is relative, so it works under GitHub Pages; the page renders from a local server with no console errors.
+
+## Update, 25 November (later): Yemen coded, and a protocol question
+
+Yemen's 12 reports are partly read: 2 leakage cases from Yemeni state stocks, 7 exclusions. Four of the reports are public only under their reissue symbols, which `reports.csv` now uses.
+
+**Decision for you: Iran.** The Panel finds Iran in non-compliance for *failing to prevent* the supply of Iranian-origin missiles and drone material to the Houthis (S/2018/594), and later that "individuals or entities within" Iran sent weapons (S/2021/79). It does not find that the Iranian government transferred them. The protocol, as fixed before coding, excludes failure-to-prevent findings and non-state senders, so Iran has no Yemen case.
+
+- Keep the rule: consistent, and it is the stricter reading of "the state chose to pass arms on". But a reviewer will ask why Iran is missing.
+- Change the rule (count failure-to-prevent findings for materiel of the state's own origin as `unclear`): log it in PROTOCOL.md's change section with the date and reason, and report the evaluation under both rules, as the protocol requires.
+
+Either is defensible. Changing it quietly is not.
+
+- *Sceptic: "Your validation leaves out Iran's arming of the Houthis?"* → The Panel itself stops short of finding that the Iranian government transferred the weapons; it finds Iran failed to prevent their supply. Our protocol, fixed before coding, counts only what the Panel finds. We report the result both with and without such findings. If you want it public for the 10 December pitch anyway, it is honest as it stands: the README says what is done and what is not.
