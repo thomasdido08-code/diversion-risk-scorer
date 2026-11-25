@@ -20,7 +20,7 @@
 ## What it takes to finish
 
 1. Run `python validation/tools/candidates.py --all` (about 2 GB of PDFs, cached in `validation/cache/`, not committed).
-2. **Sudan Panel reports need OCR.** Five are scanned images with almost no text layer: S/2019/34, S/2020/36, S/2022/48, S/2023/93, S/2024/65. Run them through `ocrmypdf` first.
+2. **Sudan Panel reports may need OCR.** The October 2026 notes recorded five as scanned images with little text: S/2019/34, S/2020/36, S/2022/48, S/2023/93, S/2024/65 (not re-checked yet; `candidates.py` flags any report with little text). Run those through `ocrmypdf` first.
 3. **CAR reports** are coded by reading, not keyword: they describe tracing chains rather than "findings". Download links are in `reports.csv`.
 4. Code every report under PROTOCOL.md, then mark it `read`.
 5. Second coding: Thomas codes a random 20% of rows (fixed seed) and checks every `re-transfer` row; report Cohen's kappa.
