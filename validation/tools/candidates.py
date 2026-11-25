@@ -77,9 +77,13 @@ def download(row):
     if os.path.exists(path) and os.path.getsize(path) > 10000:
         return path
     req = urllib.request.Request(row["url"], headers={"User-Agent": "diversion-risk-scorer validation (research)"})
-    with urllib.request.urlopen(req, timeout=300) as r, open(path, "wb") as f:
-        f.write(r.read())
+    with urllib.request.urlopen(req, timeout=300) as r:
+        data = r.read()
     time.sleep(2)
+    if not data.startswith(b"%PDF"):
+        raise ValueError("the server returned a web page, not a PDF (symbol not public?)")
+    with open(path, "wb") as f:
+        f.write(data)
     return path
 
 

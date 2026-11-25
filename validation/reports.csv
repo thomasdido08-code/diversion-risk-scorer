@@ -1,14 +1,14 @@
 report,source_type,regime_or_series,report_date,url,status,read_on,cases_found,notes
 S/2015/19,UN,DR Congo (1533) Final,2015-01-12,https://documents.un.org/api/symbol/access?s=S/2015/19&l=en&t=pdf,to read,,,
 S/2015/31,UN,Sudan (1591) Final,2015-01-16,https://documents.un.org/api/symbol/access?s=S/2015/31&l=en&t=pdf,to read,,,
-S/2015/125,UN,Yemen (2140) Final,2015-02-20,https://documents.un.org/api/symbol/access?s=S/2015/125&l=en&t=pdf,to read,,,
+S/2015/125,UN,Yemen (2140) Final,2015-02-20,https://documents.un.org/api/symbol/access?s=S/2015/125&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2015/131,UN,DPRK (1718) Final,2015-02-23,https://documents.un.org/api/symbol/access?s=S/2015/131&l=en&t=pdf,to read,,,
 S/2015/128,UN,Libya (1970) Final,2015-02-23,https://documents.un.org/api/symbol/access?s=S/2015/128&l=en&t=pdf,partly read,2026-11-25,,state findings in the arms-embargo sections checked by keyword and context; full read still needed
 S/2015/656,UN,South Sudan (2206) Interim,2015-08-21,https://documents.un.org/api/symbol/access?s=S/2015/656&l=en&t=pdf,to read,,,
 S/2015/797,UN,DR Congo (1533) Midterm,2015-10-16,https://documents.un.org/api/symbol/access?s=S/2015/797&l=en&t=pdf,to read,,,
 S/2015/801,UN,Somalia (751) Monitoring Group,2015-10-20,https://documents.un.org/api/symbol/access?s=S/2015/801&l=en&t=pdf,to read,,,
 S/2015/936,UN,Central African Republic (2127) Final,2015-12-21,https://documents.un.org/api/symbol/access?s=S/2015/936&l=en&t=pdf,to read,,,
-S/2016/73,UN,Yemen (2140) Final,2016-01-22,https://documents.un.org/api/symbol/access?s=S/2016/73&l=en&t=pdf,to read,,,committee page also links S/2018/192 (corrigendum or reissue; check)
+S/2018/192,UN,Yemen (2140) Final,2016-01-22,https://documents.un.org/api/symbol/access?s=S/2018/192&l=en&t=pdf,partly read,2026-11-25,,"public reissue of the report first circulated as S/2016/73, which is not downloadable; report_date is the original submission date; state findings checked by keyword and context; full read still needed"
 S/2016/70,UN,South Sudan (2206) Final,2016-01-26,https://documents.un.org/api/symbol/access?s=S/2016/70&l=en&t=pdf,to read,,,
 S/2016/157,UN,DPRK (1718) Final,2016-02-24,https://documents.un.org/api/symbol/access?s=S/2016/157&l=en&t=pdf,to read,,,
 S/2016/209,UN,Libya (1970) Final,2016-03-04,https://documents.un.org/api/symbol/access?s=S/2016/209&l=en&t=pdf,partly read,2026-11-25,,state findings in the arms-embargo sections checked by keyword and context; full read still needed
@@ -21,7 +21,7 @@ S/2016/963,UN,South Sudan (2206) Interim,2016-11-15,https://documents.un.org/api
 S/2016/1032,UN,Central African Republic (2127) Final,2016-12-05,https://documents.un.org/api/symbol/access?s=S/2016/1032&l=en&t=pdf,to read,,,
 S/2016/1102,UN,DR Congo (1533) Midterm,2016-12-28,https://documents.un.org/api/symbol/access?s=S/2016/1102&l=en&t=pdf,to read,,,
 S/2017/22,UN,Sudan (1591) Final,2017-01-09,https://documents.un.org/api/symbol/access?s=S/2017/22&l=en&t=pdf,to read,,,
-S/2017/81,UN,Yemen (2140) Final,2017-01-27,https://documents.un.org/api/symbol/access?s=S/2017/81&l=en&t=pdf,to read,,,committee page also links S/2018/193 (corrigendum or reissue; check)
+S/2018/193,UN,Yemen (2140) Final,2017-01-27,https://documents.un.org/api/symbol/access?s=S/2018/193&l=en&t=pdf,partly read,2026-11-25,,"public reissue of the report first circulated as S/2017/81, which is not downloadable; report_date is the original submission date; state findings checked by keyword and context; full read still needed"
 S/2017/150,UN,DPRK (1718) Final,2017-02-27,https://documents.un.org/api/symbol/access?s=S/2017/150&l=en&t=pdf,to read,,,
 S/2017/326,UN,South Sudan (2206) Final,2017-04-13,https://documents.un.org/api/symbol/access?s=S/2017/326&l=en&t=pdf,to read,,,
 S/2017/466,UN,Libya (1970) Final,2017-06-01,https://documents.un.org/api/symbol/access?s=S/2017/466&l=en&t=pdf,partly read,2026-11-25,,state findings in the arms-embargo sections checked by keyword and context; full read still needed
@@ -34,7 +34,7 @@ S/2017/979,UN,South Sudan (2206) Interim,2017-11-20,https://documents.un.org/api
 S/2017/1023,UN,Central African Republic (2127) Final,2017-12-06,https://documents.un.org/api/symbol/access?s=S/2017/1023&l=en&t=pdf,to read,,,
 S/2017/1091,UN,DR Congo (1533) Midterm,2017-12-22,https://documents.un.org/api/symbol/access?s=S/2017/1091&l=en&t=pdf,to read,,,
 S/2017/1125,UN,Sudan (1591) Final,2017-12-28,https://documents.un.org/api/symbol/access?s=S/2017/1125&l=en&t=pdf,to read,,,
-S/2018/68,UN,Yemen (2140) Final,2018-01-26,https://documents.un.org/api/symbol/access?s=S/2018/68&l=en&t=pdf,to read,,,committee page also links S/2018/594 (corrigendum or reissue; check)
+S/2018/594,UN,Yemen (2140) Final,2018-01-26,https://documents.un.org/api/symbol/access?s=S/2018/594&l=en&t=pdf,partly read,2026-11-25,,"public reissue of the report first circulated as S/2018/68, which is not downloadable; report_date is the original submission date; state findings checked by keyword and context; full read still needed"
 S/2018/171,UN,DPRK (1718) Final,2018-03-05,https://documents.un.org/api/symbol/access?s=S/2018/171&l=en&t=pdf,to read,,,
 S/2018/292,UN,South Sudan (2206) Final,2018-04-12,https://documents.un.org/api/symbol/access?s=S/2018/292&l=en&t=pdf,to read,,,
 S/2018/531,UN,DR Congo (1533) Final,2018-06-04,https://documents.un.org/api/symbol/access?s=S/2018/531&l=en&t=pdf,to read,,,
@@ -46,7 +46,7 @@ S/2018/1049,UN,South Sudan (2206) Interim,2018-11-26,https://documents.un.org/ap
 S/2018/1119,UN,Central African Republic (2127) Final,2018-12-14,https://documents.un.org/api/symbol/access?s=S/2018/1119&l=en&t=pdf,to read,,,
 S/2018/1133,UN,DR Congo (1533) Midterm,2018-12-18,https://documents.un.org/api/symbol/access?s=S/2018/1133&l=en&t=pdf,to read,,,
 S/2019/34,UN,Sudan (1591) Final,2019-01-10,https://documents.un.org/api/symbol/access?s=S/2019/34&l=en&t=pdf,to read,,,
-S/2019/83,UN,Yemen (2140) Final,2019-01-25,https://documents.un.org/api/symbol/access?s=S/2019/83&l=en&t=pdf,to read,,,
+S/2019/83,UN,Yemen (2140) Final,2019-01-25,https://documents.un.org/api/symbol/access?s=S/2019/83&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2019/137,UN,Mali (2374) Midterm,2019-02-21,https://documents.un.org/api/symbol/access?s=S/2019/137&l=en&t=pdf,to read,,,
 S/2019/171,UN,DPRK (1718) Final,2019-03-05,https://documents.un.org/api/symbol/access?s=S/2019/171&l=en&t=pdf,to read,,,
 S/2019/301,UN,South Sudan (2206) Final,2019-04-09,https://documents.un.org/api/symbol/access?s=S/2019/301&l=en&t=pdf,to read,,,
@@ -60,7 +60,7 @@ S/2019/914,UN,Libya (1970) Final,2019-12-09,https://documents.un.org/api/symbol/
 S/2019/930,UN,Central African Republic (2127) Final,2019-12-14,https://documents.un.org/api/symbol/access?s=S/2019/930&l=en&t=pdf,to read,,,
 S/2019/974,UN,DR Congo (1533) Midterm,2019-12-20,https://documents.un.org/api/symbol/access?s=S/2019/974&l=en&t=pdf,to read,,,
 S/2020/36,UN,Sudan (1591) Final,2020-01-14,https://documents.un.org/api/symbol/access?s=S/2020/36&l=en&t=pdf,to read,,,
-S/2020/70,UN,Yemen (2140) Final,2020-01-27,https://documents.un.org/api/symbol/access?s=S/2020/70&l=en&t=pdf,to read,,,committee page also links S/2020/326 (corrigendum or reissue; check)
+S/2020/326,UN,Yemen (2140) Final,2020-01-27,https://documents.un.org/api/symbol/access?s=S/2020/326&l=en&t=pdf,partly read,2026-11-25,,"public reissue of the report first circulated as S/2020/70, which is not downloadable; report_date is the original submission date; state findings checked by keyword and context; full read still needed"
 S/2020/151,UN,DPRK (1718) Final,2020-03-02,https://documents.un.org/api/symbol/access?s=S/2020/151&l=en&t=pdf,to read,,,
 S/2020/158/Rev.1,UN,Mali (2374) Midterm,2020-03-18,https://documents.un.org/api/symbol/access?s=S/2020/158/Rev.1&l=en&t=pdf,to read,,,
 S/2020/342,UN,South Sudan (2206) Final,2020-04-28,https://documents.un.org/api/symbol/access?s=S/2020/342&l=en&t=pdf,to read,,,
@@ -72,7 +72,7 @@ S/2020/949,UN,Somalia (751) Panel,2020-10-28,https://documents.un.org/api/symbol
 S/2020/1141,UN,South Sudan (2206) Interim,2020-11-25,https://documents.un.org/api/symbol/access?s=S/2020/1141&l=en&t=pdf,to read,,,
 S/2020/1283,UN,DR Congo (1533) Midterm,2020-12-23,https://documents.un.org/api/symbol/access?s=S/2020/1283&l=en&t=pdf,to read,,,
 S/2021/40,UN,Sudan (1591) Final,2021-01-13,https://documents.un.org/api/symbol/access?s=S/2021/40&l=en&t=pdf,to read,,,
-S/2021/79,UN,Yemen (2140) Final,2021-01-22,https://documents.un.org/api/symbol/access?s=S/2021/79&l=en&t=pdf,to read,,,
+S/2021/79,UN,Yemen (2140) Final,2021-01-22,https://documents.un.org/api/symbol/access?s=S/2021/79&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2021/87,UN,Central African Republic (2127) Midterm,2021-01-27,https://documents.un.org/api/symbol/access?s=S/2021/87&l=en&t=pdf,to read,,,
 S/2021/151,UN,Mali (2374) Midterm,2021-02-17,https://documents.un.org/api/symbol/access?s=S/2021/151&l=en&t=pdf,to read,,,
 S/2021/211,UN,DPRK (1718) Final,2021-03-04,https://documents.un.org/api/symbol/access?s=S/2021/211&l=en&t=pdf,to read,,,
@@ -85,7 +85,7 @@ S/2021/777,UN,DPRK (1718) Midterm,2021-09-08,https://documents.un.org/api/symbol
 S/2021/849,UN,Somalia (751) Panel,2021-10-06,https://documents.un.org/api/symbol/access?s=S/2021/849&l=en&t=pdf,to read,,,
 S/2021/1104,UN,DR Congo (1533) Midterm,2021-12-30,https://documents.un.org/api/symbol/access?s=S/2021/1104&l=en&t=pdf,to read,,,
 S/2022/48,UN,Sudan (1591) Final,2022-01-24,https://documents.un.org/api/symbol/access?s=S/2022/48&l=en&t=pdf,to read,,,
-S/2022/50,UN,Yemen (2140) Final,2022-01-26,https://documents.un.org/api/symbol/access?s=S/2022/50&l=en&t=pdf,to read,,,
+S/2022/50,UN,Yemen (2140) Final,2022-01-26,https://documents.un.org/api/symbol/access?s=S/2022/50&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2022/232,UN,Mali (2374) Midterm,2022-02-28,https://documents.un.org/api/symbol/access?s=S/2022/232&l=en&t=pdf,to read,,,
 S/2022/132,UN,DPRK (1718) Final,2022-03-01,https://documents.un.org/api/symbol/access?s=S/2022/132&l=en&t=pdf,to read,,,
 S/2022/359,UN,South Sudan (2206) Final,2022-04-28,https://documents.un.org/api/symbol/access?s=S/2022/359&l=en&t=pdf,to read,,,
@@ -99,7 +99,7 @@ S/2022/884,UN,South Sudan (2206) Interim,2022-12-01,https://documents.un.org/api
 S/2022/967,UN,DR Congo (1533) Midterm,2022-12-16,https://documents.un.org/api/symbol/access?s=S/2022/967&l=en&t=pdf,to read,,,
 S/2023/93,UN,Sudan (1591) Final,2023-02-07,https://documents.un.org/api/symbol/access?s=S/2023/93&l=en&t=pdf,to read,,,
 S/2023/87,UN,Central African Republic (2127) Midterm,2023-02-10,https://documents.un.org/api/symbol/access?s=S/2023/87&l=en&t=pdf,to read,,,
-S/2023/130,UN,Yemen (2140) Final,2023-02-21,https://documents.un.org/api/symbol/access?s=S/2023/130&l=en&t=pdf,to read,,,
+S/2023/130,UN,Yemen (2140) Final,2023-02-21,https://documents.un.org/api/symbol/access?s=S/2023/130&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2023/138,UN,Mali (2374) Midterm,2023-02-22,https://documents.un.org/api/symbol/access?s=S/2023/138&l=en&t=pdf,to read,,,
 S/2023/171,UN,DPRK (1718) Final,2023-03-07,https://documents.un.org/api/symbol/access?s=S/2023/171&l=en&t=pdf,to read,,,
 S/2023/189,UN,Haiti (2653) Interim,2023-03-13,https://documents.un.org/api/symbol/access?s=S/2023/189&l=en&t=pdf,to read,,,
@@ -111,7 +111,7 @@ S/2023/656,UN,DPRK (1718) Midterm,2023-09-12,https://documents.un.org/api/symbol
 S/2023/673,UN,Libya (1970) Final,2023-09-15,https://documents.un.org/api/symbol/access?s=S/2023/673&l=en&t=pdf,partly read,2026-11-25,,state findings in the arms-embargo sections checked by keyword and context; full read still needed
 S/2023/674,UN,Haiti (2653) Final,2023-09-15,https://documents.un.org/api/symbol/access?s=S/2023/674&l=en&t=pdf,to read,,,
 S/2023/724,UN,Somalia (751) Panel,2023-10-02,https://documents.un.org/api/symbol/access?s=S/2023/724&l=en&t=pdf,to read,,,
-S/2023/833,UN,Yemen (2140) Final,2023-11-02,https://documents.un.org/api/symbol/access?s=S/2023/833&l=en&t=pdf,to read,,,
+S/2023/833,UN,Yemen (2140) Final,2023-11-02,https://documents.un.org/api/symbol/access?s=S/2023/833&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2023/922,UN,South Sudan (2206) Interim,2023-12-01,https://documents.un.org/api/symbol/access?s=S/2023/922&l=en&t=pdf,to read,,,
 S/2023/990,UN,DR Congo (1533) Midterm,2023-12-30,https://documents.un.org/api/symbol/access?s=S/2023/990&l=en&t=pdf,to read,,,
 S/2024/65,UN,Sudan (1591) Final,2024-01-15,https://documents.un.org/api/symbol/access?s=S/2024/65&l=en&t=pdf,to read,,,
@@ -122,7 +122,7 @@ S/2024/343,UN,South Sudan (2206) Final,2024-04-29,https://documents.un.org/api/s
 S/2024/432,UN,DR Congo (1533) Final,2024-06-04,https://documents.un.org/api/symbol/access?s=S/2024/432&l=en&t=pdf,to read,,,
 S/2024/444,UN,Central African Republic (2127) Final,2024-06-05,https://documents.un.org/api/symbol/access?s=S/2024/444&l=en&t=pdf,to read,,,
 S/2024/704,UN,Haiti (2653) Final,2024-09-30,https://documents.un.org/api/symbol/access?s=S/2024/704&l=en&t=pdf,to read,,,
-S/2024/731,UN,Yemen (2140) Final,2024-10-11,https://documents.un.org/api/symbol/access?s=S/2024/731&l=en&t=pdf,to read,,,
+S/2024/731,UN,Yemen (2140) Final,2024-10-11,https://documents.un.org/api/symbol/access?s=S/2024/731&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2024/748,UN,Somalia (751) Panel,2024-10-28,https://documents.un.org/api/symbol/access?s=S/2024/748&l=en&t=pdf,to read,,,
 S/2024/855/Rev.1,UN,South Sudan (2206) Interim,2024-11-29,https://documents.un.org/api/symbol/access?s=S/2024/855/Rev.1&l=en&t=pdf,to read,,,
 S/2024/914,UN,Libya (1970) Final,2024-12-13,https://documents.un.org/api/symbol/access?s=S/2024/914&l=en&t=pdf,partly read,2026-11-25,,state findings in the arms-embargo sections checked by keyword and context; full read still needed
@@ -134,7 +134,7 @@ S/2025/385,UN,Central African Republic (2127) Final,2025-06-15,https://documents
 S/2025/442,UN,South Sudan (2206) Final,2025-07-01,https://documents.un.org/api/symbol/access?s=S/2025/442&l=en&t=pdf,to read,,,
 S/2025/446,UN,DR Congo (1533) Final,2025-07-03,https://documents.un.org/api/symbol/access?s=S/2025/446&l=en&t=pdf,to read,,,
 S/2025/597,UN,Haiti (2653) Final,2025-09-25,https://documents.un.org/api/symbol/access?s=S/2025/597&l=en&t=pdf,to read,,,
-S/2025/650,UN,Yemen (2140) Final,2025-10-17,https://documents.un.org/api/symbol/access?s=S/2025/650&l=en&t=pdf,to read,,,
+S/2025/650,UN,Yemen (2140) Final,2025-10-17,https://documents.un.org/api/symbol/access?s=S/2025/650&l=en&t=pdf,partly read,2026-11-25,,state findings checked by keyword and context; full read still needed
 S/2025/768,UN,South Sudan (2206) Interim,2025-11-26,https://documents.un.org/api/symbol/access?s=S/2025/768&l=en&t=pdf,to read,,,
 S/2025/777,UN,Somalia (751) Panel,2025-11-28,https://documents.un.org/api/symbol/access?s=S/2025/777&l=en&t=pdf,to read,,,
 S/2025/858,UN,DR Congo (1533) Midterm,2025-12-30,https://documents.un.org/api/symbol/access?s=S/2025/858&l=en&t=pdf,to read,,,
