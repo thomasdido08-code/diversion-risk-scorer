@@ -193,8 +193,8 @@ function renderVal(){
     <p>Fifteen states with documented diversion, split by mechanism. Ranks follow the current weights.</p>
     <h3>Leakage: weak states losing their stocks · mean percentile ${avg(L)}</h3>${tbl(L)}
     <h3>Deliberate re-transfer by governments · mean percentile ${avg(R)}</h3>${tbl(R)}
-    <div class="callout"><p><b>Blind spot.</b> Governance data measures whether a state <i>can</i> control its arsenal, not whether it <i>chooses</i> to. The UAE ranks ${byIso.ARE.r} despite UN Panel findings on Libya. A planned update adds a component for UN Panel findings of embargo breaches.</p></div>
-    <p>These cases were picked knowing the outcome, so this is a sanity check, not a blind test. A planned update replaces it with cases coded blind from Conflict Armament Research and UN Panel reports.</p>`;
+    <div class="callout"><p><b>Blind spot.</b> Governance data measures whether a state <i>can</i> control its arsenal, not whether it <i>chooses</i> to. The UAE ranks ${byIso.ARE.r} despite UN Panel findings on Libya. A component for UN Panel findings of embargo breaches was tested and not adopted: it cannot close the gap without tuning to one case. A separate re-transfer flag is proposed instead (see the roadmap).</p></div>
+    <p>These cases were picked knowing the outcome, so this is a sanity check, not a blind test. A blind validation from Conflict Armament Research and UN Panel reports is under way: coding is complete (146 cases) and results will be published after an independent second coding.</p>`;
   document.querySelectorAll("#v-val tbody tr").forEach(tr=>tr.addEventListener("click",()=>select(tr.dataset.i)));
 }
 function renderMethod(){

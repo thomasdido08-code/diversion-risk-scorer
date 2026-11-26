@@ -43,10 +43,10 @@ Full method, sources and limits: [METHODOLOGY.md](METHODOLOGY.md).
 
 ## Roadmap
 
-| # | Weak spot | Planned fix | Status (25 Nov 2026) |
+| # | Weak spot | Planned fix | Status (26 Nov 2026) |
 |---|---|---|---|
 | 1 | Source figures were collected by hand | Script that pulls the World Bank API directly and compares with the current file | **Done.** `scripts/pipeline/`: 0 mismatches in 1,736 values; ATT status checked against the UN Treaty Collection. Embargoes stay hand-coded. |
-| 2 | Validation is circular | Code every recipient state named as a diversion source in Conflict Armament Research and UN Panel reports, 2015–2025, chosen blind | **Under way.** Protocol fixed before coding; 202 sources listed; first Libya tranche coded. No evaluation until coding and second coding are complete. See `validation/README.md`. |
+| 2 | Validation is circular | Code every recipient state named as a diversion source in Conflict Armament Research and UN Panel reports, 2015–2025, chosen blind | **Under way.** Protocol fixed before coding; 202 sources listed; coding complete for all of them (146 cases across 33 states, 95 documented exclusions); 20% second-coding sample drawn. No evaluation until the second coding is complete. See `validation/README.md`. |
 | 3 | Blind to deliberate re-transfer | New component: UN Panel findings of embargo breaches per state | **Tested, not adopted.** At 10% the UAE moves from 134th to 83rd: an additive component cannot fix the blind spot without tuning. Proposed instead: a separate re-transfer flag. See METHODOLOGY.md. |
 | 4 | Arbitrary weights | Fit weights on the blind cases from #2; compare with an expert-survey average | Waits for #2 |
 | 5 | Governance and conflict overlap | Check correlations; merge or drop overlapping measures | **Checked.** Correlation 0.66; dropping conflict changes ranks little (0.989). Kept. |
