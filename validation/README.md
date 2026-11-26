@@ -1,6 +1,6 @@
 # Blind validation (roadmap item 2)
 
-**Status, 25 November 2026: coding has started. No evaluation has been run, and none will be until coding and second coding are complete (PROTOCOL.md, section 7).**
+**Status, 26 November 2026: every UN report in scope has had a first coding pass, and 12 of 44 CAR publications. No evaluation has been run, and none will be until coding and second coding are complete (PROTOCOL.md, section 7).**
 
 | File | What it is |
 |---|---|
@@ -9,7 +9,7 @@
 | `cases.csv` | Coded cases. One row per state × report × mechanism, with page, quote and URL. |
 | `excluded.csv` | Findings that name a state but are not cases under the protocol, with the reason. Kept so that exclusions can be checked too. |
 | `tools/candidates.py` | Downloads a report and lists candidate sentences with page numbers. It points the coder to passages; it does not code. |
-| `tools/ctx.py`, `tools/statescan.py` | Read the text around a phrase on a page; list pages where a state is named next to embargo-violation language. |
+| `tools/ctx.py`, `tools/statescan.py`, `tools/forcescan.py` | Read the text around a phrase on a page; list pages where a state is named next to embargo-violation language; list sentences where a state's army or police ("FARDC", "FACA", "SNA") is named next to diversion language, which is where most leakage findings sit. |
 | `candidates/` | Candidate lists for the reports processed so far. |
 
 ## Progress
@@ -19,20 +19,26 @@
 - **South Sudan (22 reports): partly read.** 5 re-transfer cases: Sudan's supply of the armed opposition (S/2016/70, S/2016/793) and of South Sudan's security bureau after the 2018 embargo (S/2020/342); Uganda's re-transfer of Israeli rifles without the exporter's consent (S/2016/70, S/2016/963). 5 findings excluded, mainly the presence of Uganda's own troops, which breaches the embargo but is not a transfer of materiel. Leakage from South Sudanese stocks to militias still needs a full read.
 - **Sudan (11 reports): partly read.** All have a text layer, so no OCR is needed (the October note was wrong). 4 cases: the Government of Sudan moving arms into Darfur without the required exemption (S/2015/31, S/2019/34, S/2021/40), and the UAE's military support to RSF through Am Djarass, which the Panel judges "credible" without a formal finding (S/2024/65, coded `probable`: **a close call for second coding**). 5 exclusions, including South Sudan's failure-to-prevent finding and Chad's transit role.
 - **DPRK (16 reports): arms sections partly read.** 1 case: KOMID components for a munitions factory in Namibia and small arms for the DRC Presidential Guard (S/2017/150). Interdicted shipments excluded.
-- **CAR list:** every item now has a title and publication date from its PDF; 19 translations are flagged so that no report is coded twice, leaving 44 publications to read.
-- Four Yemen reports are public only under their reissue symbols (S/2018/192, S/2018/193, S/2018/594, S/2020/326); the original symbols return a web page, not a PDF. `candidates.py` now refuses non-PDF downloads.
-- **Not started:** DR Congo, Central African Republic, Somalia, Mali, Haiti, and the 44 CAR publications.
+- **DR Congo (22 reports): partly read.** 30 cases. Leakage from FARDC stocks in almost every report (sales by soldiers, looted depots, battlefield captures by ADF, CODECO and M23). FARDC supplies to allied armed groups are coded `unclear` while the reports show units or regional commanders acting (S/2019/974, S/2020/1283, S/2022/967) and `re-transfer` once they show the command and the provincial government directing it (S/2023/431, S/2023/990, S/2024/432, S/2025/858). Rwanda's support to M23 is coded `re-transfer` where a report establishes materiel (S/2022/967, S/2023/431, S/2024/432, S/2025/446; S/2024/969 probable), and excluded where it documents troops only. Burundi: army supplies to Congolese armed groups (S/2018/531 probable, S/2019/469) and leakage from coup-era stocks. Uganda: Ugandan ammunition with FRPI (S/2017/672, unclear). Unnotified deliveries to the Government (China, Burundi, others) are excluded as notification failures.
+- **Central African Republic (19 reports): partly read.** 6 cases: Chadian-held Galil rifles traced to armed groups (S/2016/694), Galils traced to the DRC (S/2015/936), FACA losses (S/2020/662, S/2021/87), and the Government arming co-opted militias (S/2021/569, S/2025/385, both probable and **close calls**). Government-authorised imports, Russian and Sudanese deliveries to the Government, and traders' networks from Chad and the Sudan are excluded.
+- **Somalia (11 reports): partly read.** 21 cases. Federal Government weapons with arms dealers and Al-Shabaab in every report from 2015; battlefield captures from Kenyan (Kulbiyow, El Adde) and Burundian AMISOM contingents; state-stock traces to the UAE, Saudi Arabia, Yemen and the United States (S/2018/1002, S/2021/849, S/2024/748). Private smuggling from Yemen and Iran's Makran coast is excluded (non-state senders), as are the UAE's Berbera base and Türkiye's own drones (no transfer to another user).
+- **Mali (11 reports): read for arms findings.** No case: the Mali regime has no arms embargo and the Panel reports no state-stock finding (looting of FAMa is only "reported").
+- **Haiti (6 reports): partly read.** 6 cases: Haitian police stockpile diversions (S/2023/674, S/2024/704, S/2025/356, S/2025/597) and the Dominican Republic's police stockpile, from which 900,000 items were diverted (S/2025/356, S/2025/597). US-origin guns reach Haiti through the civilian market and are excluded.
+- **Short reports.** S/2021/1104, S/2022/232, S/2023/189 and S/2024/128 are two-page letters: the Group or Panel was appointed too late to report findings. `candidates.py` flagged them as "scanned?"; they are not scans.
+- **CAR publications:** 12 of 44 read for their findings (22 cases): Sudan's re-transfers to armed groups in South Sudan, Côte d'Ivoire and the CAR; Uganda as a route to the SPLA (probable, **close call**); the United States' and Saudi Arabia's unauthorised re-transfers recovered from Islamic State; leakage from Libyan, Malian, Ivorian, Iraqi, Syrian, Nigerian, Chadian and Nigerien stocks. **Two Iran cases, both probable and close calls:** CAR attributes the 2016 dhow weapons to an Iranian national stockpile and the Qasef-1 drones to Iranian supply. These differ from the excluded Yemen Panel findings (failure to prevent, non-state senders) because CAR attributes the materiel to the state itself; they need your view under the rule you kept on 25 November. 12 more were scanned with no case (mostly technical reports on IS improvised weapons); 20 are not yet downloaded.
+
+**Totals, 26 November:** 107 cases (52 leakage, 39 re-transfer, 16 unclear) across 27 states, and 91 documented exclusions. 13 cases and 2 exclusions are marked as close calls for second coding. During coding the coder did not open `data/derived/`, `components.csv`, `rank_ranges.csv` or the page (protocol section 6).
 
 ## What it takes to finish
 
-1. Run `python validation/tools/candidates.py --all` (about 2 GB of PDFs, cached in `validation/cache/`, not committed).
+1. Done 26 Nov: `python validation/tools/candidates.py --all` (about 2 GB of PDFs, cached in `validation/cache/`, not committed). Run `tools/forcescan.py` as well for each report: leakage findings name the army, not the state.
 2. Sudan reports have a text layer; no OCR needed. `candidates.py` flags any report with little text.
 3. **CAR reports** are coded by reading, not keyword: they describe tracing chains rather than "findings". Download links are in `reports.csv`.
-4. Code every report under PROTOCOL.md, then mark it `read`.
+4. Code every report under PROTOCOL.md, then mark it `read`. Every UN report has now had a first pass (`partly read`); the full reads look for leakage described in annexes and tables, and the remaining 32 CAR publications (20 not yet downloaded) need reading.
 5. Second coding: Thomas codes a random 20% of rows (fixed seed) and checks every `re-transfer` row; report Cohen's kappa.
 6. Only then run the evaluation in PROTOCOL.md, section 7.
 
-At the pace of the Libya tranche, a full read of the 139 UN reports is several weeks of part-time work. Mid-January is realistic for Libya, Yemen, Sudan, South Sudan and the DPRK arms sections, which hold most re-transfer findings; the leakage-heavy regimes (DRC, CAR, Somalia, Mali, Haiti) would follow.
+The first pass is complete for all 139 UN reports. Full reads and the remaining CAR publications are the main work left before second coding. Under the protocol, the evaluation waits for both.
 
 ## A note on the October 2026 coding
 

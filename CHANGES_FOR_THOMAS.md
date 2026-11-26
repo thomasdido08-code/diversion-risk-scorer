@@ -28,7 +28,7 @@ What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to de
 
 **Your October work.** `COVERAGE.md` (31 Oct) said seven regimes were coded with AUCs of 0.94/0.85, but the surviving `cases.csv` had only 12 Libya rows. Don't cite those AUCs: they can't be traced to rows.
 
-**Timeline to mid-January.** "Clearly under way" is realistic: Libya, Yemen, Sudan, South Sudan and the DPRK arms sections, which hold most re-transfer findings. A full sweep of 139 reports plus CAR is several weeks of part-time reading. Sudan reports may need OCR.
+**Timeline.** Superseded on 26 November: every UN report has had a first pass (see the update at the end of this file).
 
 - *Sceptic: "UN Panels only exist in conflict theatres, so of course your index catches leakage."* → Exactly why the protocol reports leakage and re-transfer separately. Re-transfer is the fair test, because the supplier states can come from anywhere.
 - *Sceptic: "Why exclude 'failure to inspect' findings?"* → They're compliance failures by transit states, not diversion from the state's own control. Counting them would mix a different question into the test. Every exclusion is listed with its reason in `excluded.csv`.
@@ -99,3 +99,23 @@ Yemen's 12 reports are partly read: 2 leakage cases from Yemeni state stocks, 7 
 You chose to keep the rule. When the evaluation is published, it should name Iran and these findings explicitly, so the exclusion is visible rather than silent.
 
 - *Sceptic: "Your validation leaves out Iran's arming of the Houthis?"* → The Panel itself stops short of finding that the Iranian government transferred the weapons; it finds Iran failed to prevent their supply. Our protocol, fixed before coding, counts only what the Panel finds. We report the result both with and without such findings. If you want it public for the 10 December pitch anyway, it is honest as it stands: the README says what is done and what is not.
+
+## Update, 26 November: first coding pass complete for the UN reports
+
+**What.** The 69 UN reports not yet started (DR Congo, Central African Republic, Somalia, Mali, Haiti) were downloaded and coded, and 12 CAR publications were read for their findings. Totals now: **107 cases** (52 leakage, 39 re-transfer, 16 unclear) across 27 states, and 91 documented exclusions. Every row has a page, a quote and a URL. No evaluation was run, and I did not open the scores while coding.
+
+**A new tool.** `validation/tools/forcescan.py`. `candidates.py` matches state names, but leakage findings usually name the army or police ("FARDC", "FACA", "Somali National Army"). Without it, most DRC and Somalia leakage would have been missed.
+
+**What the new coding shows, without evaluating it.** Leakage dominates the new regimes, as the protocol expected: DRC, Somali, Haitian and CAR state stocks in almost every report. The new re-transfer cases are Rwanda (support to M23, 2022–2025), Burundi (army supplies to Congolese armed groups), the DRC itself (arming allied armed groups once the command directs it), Sudan, Uganda, the United States and Saudi Arabia (CAR's Islamic State investigation), and the CAR Government (arming co-opted militias).
+
+**Decisions that need you (13 close calls are marked in `notes`).**
+
+1. **Iran, again, but different.** Two CAR publications attribute materiel to the Iranian state: the 2016 dhow weapons to "a national stockpile", and the Qasef-1 drones to Iranian supply to the Houthis. Under the rule you kept, the Yemen Panel's failure-to-prevent findings stay excluded. These two are different: the materiel itself is attributed to the state. I coded both as `probable` (CAR's own wording is "suggests" and "plausibly"). If you read the rule as excluding Iran altogether, say so and I will move them to `excluded.csv`; that would be a protocol change and must be logged.
+2. **When does a government arming militias count as re-transfer?** The DRC's support to Wazalendo groups and FDLR, and the CAR's arming of co-opted militias. I coded `unclear` where reports show units or commanders acting, and `re-transfer` where they show the command or government directing it (from S/2023/431). Check that line.
+3. **Battlefield captures from peacekeepers** (Kenyan and Burundian AMISOM bases) are coded as leakage from those states' stocks, as the protocol's definition says. A reviewer may say AMISOM losses say little about Kenya's own controls. Keep them, or report them separately as a sensitivity?
+4. **Embassy-level traces.** Single items traced to a state's purchase (a US Army machine gun, a Saudi grenade, UAE-end-user machine guns, Yemeni RPG rounds) are coded `unclear`, `established`. They will make some well-governed states "positive" on one item. The protocol's sensitivity run (one case per state, established only) shows the effect; it is worth stating in the evaluation.
+
+- *Sceptic: "You coded 69 reports in a day; how careful can that be?"* → It is a first pass, marked `partly read`: findings located by three scans and read in context, each with page and quote. Full reads (annexes and tables) are still to do, and your 20% second coding and kappa come before any number is published.
+- *Sceptic: "The United States is a positive case?"* → Under the protocol, yes: CAR traced US-purchased materiel re-transferred without the exporters' consent to Islamic State, and a US Army machine gun to a Somali arms dealer. The index scores the risk that arms leave a state's control; the evaluation will show these rows openly.
+
+**Also fixed.** `candidates.py` crashed when printing CAR titles on a Windows console; it now writes UTF-8. One download (S/2022/479) failed on a reset connection and was retried. Four reports `candidates.py` flagged as "scanned?" are two-page letters with no findings, not scans.
