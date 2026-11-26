@@ -115,6 +115,7 @@ def candidates(row, names, name_re):
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")  # report titles include non-Latin-1 characters
     p = argparse.ArgumentParser()
     g = p.add_mutually_exclusive_group(required=True)
     g.add_argument("--regime")
