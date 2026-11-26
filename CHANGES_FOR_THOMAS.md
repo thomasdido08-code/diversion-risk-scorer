@@ -129,3 +129,15 @@ You chose to keep the rule. When the evaluation is published, it should name Ira
 - *Sceptic: "Counting the DRC as a re-transfer case makes your index look good."* → Yes, and that is why the sensitivity exists: the re-transfer result is reported with and without the government-proxy rows.
 
 **Also fixed.** `candidates.py` crashed when printing CAR titles on a Windows console; it now writes UTF-8. One download (S/2022/479) failed on a reset connection and was retried. Four reports `candidates.py` flagged as "scanned?" are two-page letters with no findings, not scans.
+
+## Update, 26 November (later): second pass and the last CAR publications
+
+**What.** The 20 CAR publications not yet downloaded were fetched and read or scanned, and the earlier regimes got a second pass for state-stock findings. **146 cases** now (61 leakage, 51 re-transfer, 34 unclear) across 33 states, 95 exclusions, 17 close calls. No case was recoded and no score was looked at.
+
+**Three things worth knowing before you second-code.**
+
+1. **Libya was under-coded.** The Panel's own checklist (S/2024/914, annex 28) and its responsibility tables show confirmed transfers by the UAE in 2017, 2021, 2022 and 2023, Russia in 2021, 2022 and 2024, Türkiye in 2022 and 2023, and Jordan and Egypt in 2021 that the first pass had missed. All are now coded from the report that attributes them. The UAE now has 8 cases in total, most of them re-transfers.
+2. **Iran now appears in UN reports too, but only as `unclear`.** Three Yemen Panel reports trace Belarusian sights sold to Iran's armed forces under end-user certificates to seized shipments bound for the Houthis. Under the note you approved (state-attributed materiel is a case), these are coded exactly like the US, Saudi and UAE single-item traces: `unclear`, which counts only in `any`. The excluded findings about who sent them are unchanged.
+3. **Many more `unclear` rows (34).** CAR's Sahel reports say materiel was "diverted from the state custody" of eight states without saying how. Protocol section 5 codes that `unclear`, so these do not feed the leakage or re-transfer tests.
+
+- *Sceptic: "Your first pass missed a dozen UAE and Russian transfers; why trust the rest?"* → Because the second pass checked the coding against the Panel's own list of confirmed transfers, which is the right test. The misses were in Libya's later reports, where findings sit in summary tables rather than in sentences the scan tools catch. That is now recorded, and your second coding samples from the full set.
