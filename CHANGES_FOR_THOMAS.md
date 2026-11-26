@@ -108,7 +108,7 @@ You chose to keep the rule. When the evaluation is published, it should name Ira
 
 **What the new coding shows, without evaluating it.** Leakage dominates the new regimes, as the protocol expected: DRC, Somali, Haitian and CAR state stocks in almost every report. The new re-transfer cases are Rwanda (support to M23, 2022–2025), Burundi (army supplies to Congolese armed groups), the DRC itself (arming allied armed groups once the command directs it), Sudan, Uganda, the United States and Saudi Arabia (CAR's Islamic State investigation), and the CAR Government (arming co-opted militias).
 
-**Decisions that need you (13 close calls are marked in `notes`).**
+**Decisions (13 close calls are marked in `notes`). All four decided 26 November and logged in PROTOCOL.md, "Changes to this protocol"; no case recoded.**
 
 1. **Iran, again, but different.** Two CAR publications attribute materiel to the Iranian state: the 2016 dhow weapons to "a national stockpile", and the Qasef-1 drones to Iranian supply to the Houthis. Under the rule you kept, the Yemen Panel's failure-to-prevent findings stay excluded. These two are different: the materiel itself is attributed to the state. I coded both as `probable` (CAR's own wording is "suggests" and "plausibly"). If you read the rule as excluding Iran altogether, say so and I will move them to `excluded.csv`; that would be a protocol change and must be logged.
 2. **When does a government arming militias count as re-transfer?** The DRC's support to Wazalendo groups and FDLR, and the CAR's arming of co-opted militias. I coded `unclear` where reports show units or commanders acting, and `re-transfer` where they show the command or government directing it (from S/2023/431). Check that line.
@@ -117,5 +117,15 @@ You chose to keep the rule. When the evaluation is published, it should name Ira
 
 - *Sceptic: "You coded 69 reports in a day; how careful can that be?"* → It is a first pass, marked `partly read`: findings located by three scans and read in context, each with page and quote. Full reads (annexes and tables) are still to do, and your 20% second coding and kappa come before any number is published.
 - *Sceptic: "The United States is a positive case?"* → Under the protocol, yes: CAR traced US-purchased materiel re-transferred without the exporters' consent to Islamic State, and a US Army machine gun to a Somali arms dealer. The index scores the risk that arms leave a state's control; the evaluation will show these rows openly.
+
+**What you decided on the four, 26 November.**
+
+1. **Iran:** keep both CAR cases as `probable`. The rule excludes failure-to-prevent findings and non-state senders, not Iran; these attribute materiel to the state. The `established`-only run shows the result without them.
+2. **Militias:** the line (`re-transfer` only when the command or government directs it) is now written into the protocol, with a sensitivity that drops those rows or counts them as `unclear`.
+3. **Peacekeepers' losses:** stay `leakage`; a new sensitivity reports results without losses of forces deployed abroad.
+4. **Single traced items:** no change; they are `unclear` and count only in `any`, which the evaluation will say next to those figures.
+
+- *Sceptic: "You changed the protocol after coding."* → Nothing was recoded and no score was looked at. One rule that was applied but unwritten is now written down, and two sensitivities were added. All are dated, and the evaluation reports results with and without them, as section 7 requires.
+- *Sceptic: "Counting the DRC as a re-transfer case makes your index look good."* → Yes, and that is why the sensitivity exists: the re-transfer result is reported with and without the government-proxy rows.
 
 **Also fixed.** `candidates.py` crashed when printing CAR titles on a Windows console; it now writes UTF-8. One download (S/2022/479) failed on a reset connection and was retried. Four reports `candidates.py` flagged as "scanned?" are two-page letters with no findings, not scans.

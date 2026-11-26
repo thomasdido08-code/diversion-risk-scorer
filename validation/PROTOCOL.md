@@ -108,4 +108,18 @@ No weight, component or threshold is changed on the basis of this evaluation wit
 
 ## Changes to this protocol
 
-None yet.
+Sections 1–7 above are left as fixed on 25 November. Changes are listed here, dated, and the evaluation reports results under the original and the changed rule.
+
+### 26 November 2026 (decided by Thomas Di Domenico, after the first coding pass and before any evaluation)
+
+No case is recoded by these changes, and no score was looked at in making them.
+
+1. **Clarification of section 5: state forces supplying armed groups.** Materiel passed by a state's own forces to an armed group is coded `re-transfer` only when the report shows the military command or the government directing or organising it (for example, meetings convened by the official hierarchy, a provincial government coordinating supplies, or a government programme). When the report shows units, officers or a regional commander acting without that, it is coded `unclear`. When the report shows sales or theft by individuals, it is `leakage`. This is the rule applied in the first pass; it is written down here because section 5 did not cover it.
+   - *Why:* the DR Congo and Central African Republic reports describe a continuum from soldiers selling ammunition to a government using armed groups as proxies.
+   - *Added sensitivity:* re-transfer results are also reported (a) without any row covered by this clarification, and (b) with those rows counted as `unclear`. The states concerned rank high on the index, so counting them as re-transfer positives would flatter the index on the re-transfer test.
+
+2. **Added sensitivity: losses of forces deployed abroad.** Battlefield captures from a state's forces serving outside its territory (for example, AMISOM contingents in Somalia) remain `leakage` under section 5. Results are also reported without them, because such losses reflect the theatre more than the contributing state's own stock controls.
+
+3. **Note on the Iran exclusion (no change).** The 25 November decision stands: failure-to-prevent findings and findings against non-state senders are not cases. Findings that attribute the materiel itself to the Iranian state (a national stockpile, or supply by the state) are cases under section 3, like those for any other state; they are coded with the confidence the source gives. The `established`-only sensitivity reports results without the `probable` ones.
+
+4. **Note on reporting (no change).** Single items traced to a state's purchase, where the report does not say how they left that state's control, are coded `unclear` and so enter only the `any` results (section 5). The evaluation says so next to the `any` figures, together with the `established`-only and one-case-per-state results already listed in section 7.
