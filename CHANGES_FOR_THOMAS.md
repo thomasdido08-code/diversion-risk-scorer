@@ -37,14 +37,14 @@ What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to de
 
 **Proposal.** A sixth component: UN Panel reports that find a state's government transferred arms in breach of an embargo. Scaled 0 / 0.5 (one report) / 1 (two or more). Weight 10%, taken from the others in proportion. It uses reports to 2020 only, so 2021–2025 cases stay free to test it.
 
-**Before and after** (partial coding of Libya, Yemen, South Sudan, Sudan and the DPRK, so this tests the mechanics, not a finding):
+**Before and after** (rerun 26 November on the completed coding passes; this tests the mechanics, not a finding; Burundi, added by the new coding, is 26th → 21st, 20th, 17th):
 
 | State | Now | 5% | 10% | 15% |
 |---|---|---|---|---|
 | UAE | 134 | 108 | 83 | 70 |
 | Qatar | 101 | 89 | 79 | 74 |
 | Jordan | 54 | 42 | 35 | 30 |
-| Türkiye | 41 | 36 | 29 | 22 |
+| Türkiye | 41 | 36 | 29 | 23 |
 | Uganda | 28 | 19 | 14 | 9 |
 | DPRK | 14 | 13 | 11 | 6 |
 
@@ -83,7 +83,7 @@ Governance and conflict correlate at 0.66 (Spearman 0.77), partly by constructio
 
 ## Ready to go public?
 
-**Not yet.** The US ATT question is settled (26 Nov). Before publishing I would still get the validation to at least the re-transfer-heavy regimes, so that "blind validation under way" is backed by real numbers.
+**Public since 26 November 2026**, with GitHub Pages serving `main` at https://thomasdido08-code.github.io/diversion-risk-scorer/. You decided not to wait for the evaluation: the README states that blind validation is under way, and the protocol, coding and second-coding sample are all in the repository. Before publishing, the repository and its history were checked again for secrets, local paths and large files (none). The commit email is the same one already visible in your other two public repositories.
 
 **Publication check (done 25 Nov):** no secrets or local paths; licence files present for the code, d3, topojson and the IBM Plex fonts; every script, style and data path in the page is relative, so it works under GitHub Pages; the page renders from a local server with no console errors.
 

@@ -55,21 +55,22 @@ The index cannot see deliberate re-transfer: governance data measures whether a 
 - **Weight.** 10%, taken from the other five components in proportion, so their ratios stay as they are. 5% and 15% are shown for comparison. The weight was set before looking at where the UAE lands and was not changed afterwards.
 - **No circularity.** The component uses only reports published to the end of 2020. Validation of the component may use only re-transfer cases from 2021–2025 reports and CAR reports.
 
-**Result, with the coding done so far** (Libya, Yemen, South Sudan, Sudan and the DPRK, partly read; so this is a test of the mechanics, not a finding):
+**Result, with the first and second coding passes of 26 November** (before second coding by a second coder; so this is a test of the mechanics, not a finding):
 
 | State | Reports with a finding (to 2020) | Rank now | 5% | 10% | 15% |
 |---|---|---|---|---|---|
-| United Arab Emirates | 2 | 134 | 108 | 83 | 70 |
+| United Arab Emirates | 3 | 134 | 108 | 83 | 70 |
 | Uganda | 2 | 28 | 19 | 14 | 9 |
 | DPRK | 1 | 14 | 13 | 11 | 6 |
 | Qatar | 1 | 101 | 89 | 79 | 74 |
 | Jordan | 1 | 54 | 42 | 35 | 30 |
-| Türkiye | 1 | 41 | 36 | 29 | 22 |
+| Türkiye | 1 | 41 | 36 | 29 | 23 |
+| Burundi | 1 | 26 | 21 | 20 | 17 |
 | Sudan | 6 | 1 | 1 | 1 | 1 |
 
 The top 10 does not change at any of the three weights.
 
-**It does not fix the blind spot.** The UAE rises 51 places at 10% but stays in the lower half and below the "Elevated" band (40). That is arithmetic, not a matter of tuning: at weight *w*, the component adds at most 100*w* points, and a well-governed state's other components are low. The UAE scores 29.8 now; at 10% the most it can reach is 0.9 × 29.8 + 10 = 36.8. At 15% it reaches 40.3, the bottom edge of "Elevated", and still ranks only 70th, because many states sit in that band. It would take 20% to reach 45th and 25% to reach 29th: weights at or above that of conflict at home (20%), chosen only to move one case, which is tuning. The additive design measures capacity well; intent needs a different instrument.
+**It does not fix the blind spot.** The UAE rises 51 places at 10% but stays in the lower half and below the "Elevated" band (40). That is arithmetic, not a matter of tuning: at weight *w*, the component adds at most 100*w* points, and a well-governed state's other components are low. The UAE scores 29.8 now; at 10% the most it can reach is 0.9 × 29.8 + 10 = 36.8. At 15% it reaches 40.3, the bottom edge of "Elevated", and still ranks only 70th, because many states sit in that band. It would take 20% to reach 45th and 25% to reach 30th: weights at or above that of conflict at home (20%), chosen only to move one case, which is tuning. The additive design measures capacity well; intent needs a different instrument.
 
 **Recommendation:** publish deliberate re-transfer as a separate flag beside the score ("documented re-transfer in N UN Panel reports"), not inside it, so the two questions (*can* the state keep control, and *does* it choose to pass arms on) stay visible. This is listed as a limit until the validation coding is complete and the flag can be tested on 2021–2025 cases.
 
@@ -98,3 +99,4 @@ See the roadmap in [README.md](README.md): an automated World Bank pull, blind v
 - **30 October 2026**: first snapshot.
 - **25 November 2026**: input pipeline added (`scripts/pipeline/`): the World Bank API and UN Treaty Collection reproduce every hand-collected value; no data changed. Blind-validation protocol fixed and coding started (`validation/`). Re-transfer component previewed and not adopted (see above). Overlap check added. Scores unchanged.
 - **26 November 2026**: **United States scored as outside the ATT** (0.5 → 1), under a new general rule: a signatory that has notified the depositary that it does not intend to become a party counts as outside. US score 30.2 → 37.7, rank 130th → 92nd (rank range 118–142 → 76–126), exposure 2,403 → 3,000 (15th → 11th). The 38 states ranked 92nd–130th each move down one place. The top 10, the validation percentiles and the top-10 overlap (8.75) are unchanged. Rank-range code added (`scripts/rank_ranges.py`); it reproduces the October ranges exactly. A correction to the re-transfer preview: at 25% the UAE ranks 29th, not 28th as stated on 25 November.
+- **26 November 2026 (later)**: re-transfer preview rerun on the completed first and second coding passes (`validation/cases.csv`). The UAE now has three qualifying reports to 2020 (already at the cap, so its ranks are unchanged); Burundi is added (one report); Türkiye at 15% is 23rd, not 22nd; the UAE at 25% is 30th, not 29th. Published scores unchanged.
