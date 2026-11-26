@@ -37,14 +37,14 @@ What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to de
 
 **Proposal.** A sixth component: UN Panel reports that find a state's government transferred arms in breach of an embargo. Scaled 0 / 0.5 (one report) / 1 (two or more). Weight 10%, taken from the others in proportion. It uses reports to 2020 only, so 2021–2025 cases stay free to test it.
 
-**Before and after** (partial coding of Libya, Yemen, South Sudan, Sudan and the DPRK, so this tests the mechanics, not a finding):
+**Before and after** (rerun 26 November on the completed coding passes; this tests the mechanics, not a finding; Burundi, added by the new coding, is 26th → 21st, 20th, 17th):
 
 | State | Now | 5% | 10% | 15% |
 |---|---|---|---|---|
 | UAE | 134 | 108 | 83 | 70 |
 | Qatar | 101 | 89 | 79 | 74 |
 | Jordan | 54 | 42 | 35 | 30 |
-| Türkiye | 41 | 36 | 29 | 22 |
+| Türkiye | 41 | 36 | 29 | 23 |
 | Uganda | 28 | 19 | 14 | 9 |
 | DPRK | 14 | 13 | 11 | 6 |
 
