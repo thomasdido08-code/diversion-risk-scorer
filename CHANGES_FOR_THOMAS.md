@@ -83,7 +83,7 @@ Governance and conflict correlate at 0.66 (Spearman 0.77), partly by constructio
 
 ## Ready to go public?
 
-**Not yet.** The US ATT question is settled (26 Nov). Before publishing I would still get the validation to at least the re-transfer-heavy regimes, so that "blind validation under way" is backed by real numbers.
+**Public since 26 November 2026**, with GitHub Pages serving `main` at https://thomasdido08-code.github.io/diversion-risk-scorer/. You decided not to wait for the evaluation: the README states that blind validation is under way, and the protocol, coding and second-coding sample are all in the repository. Before publishing, the repository and its history were checked again for secrets, local paths and large files (none). The commit email is the same one already visible in your other two public repositories.
 
 **Publication check (done 25 Nov):** no secrets or local paths; licence files present for the code, d3, topojson and the IBM Plex fonts; every script, style and data path in the page is relative, so it works under GitHub Pages; the page renders from a local server with no console errors.
 
