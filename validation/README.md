@@ -11,6 +11,8 @@
 | `tools/candidates.py` | Downloads a report and lists candidate sentences with page numbers. It points the coder to passages; it does not code. |
 | `tools/ctx.py`, `tools/statescan.py`, `tools/forcescan.py` | Read the text around a phrase on a page; list pages where a state is named next to embargo-violation language; list sentences where a state's army or police ("FARDC", "FACA", "SNA") is named next to diversion language, which is where most leakage findings sit. |
 | `candidates/` | Candidate lists for the reports processed so far. |
+| `second_coding/` | The blind 20% sample and the re-transfer and close-call check list, with instructions. |
+| `tools/draw_sample.py`, `tools/kappa.py` | Draw the second-coding sample (fixed seed, once); compute agreement and kappa. |
 
 ## Progress
 
@@ -40,7 +42,7 @@
 2. Sudan reports have a text layer; no OCR needed. `candidates.py` flags any report with little text.
 3. **CAR reports** are coded by reading, not keyword: they describe tracing chains rather than "findings". Download links are in `reports.csv`.
 4. Code every report under PROTOCOL.md, then mark it `read`. Every UN report has now had a first pass (`partly read`); the full reads look for leakage described in annexes and tables, and the 24 CAR publications that were only scanned may need a closer read.
-5. Second coding: Thomas codes a random 20% of rows (fixed seed) and checks every `re-transfer` row; report Cohen's kappa.
+5. Second coding: **sample drawn 26 November** (30 rows, seed 20261126; see `second_coding/README.md`). Thomas codes the blind sample first, then checks every `re-transfer` row and close call; `tools/kappa.py` reports Cohen's kappa.
 6. Only then run the evaluation in PROTOCOL.md, section 7.
 
 The first pass is complete for all 139 UN reports. Full reads and the remaining CAR publications are the main work left before second coding. Under the protocol, the evaluation waits for both.
