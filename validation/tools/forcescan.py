@@ -21,7 +21,7 @@ FORCES = {
     "SSD": r"\bSSPDF\b|\bSPLA\b|South Sudan People.s Defence Forces|National Security Service",
     "SDN": r"Sudanese Armed Forces|\bSAF\b|Rapid Support Forces|\bRSF\b",
     "LBY": r"Libyan National Army|\bLNA\b|Government of National Accord|\bGNA\b|Government of National Unity",
-    "YEM": r"Government of Yemen|Yemeni armed forces|legitimate Government",
+    "YEM": r"Government of Yemen|Yemeni (armed forces|army|military|Armed Forces)|legitimate Government|Republican Guard|state stockpile|national stockpile|government stocks",
 }
 DIVERSION = re.compile(
     r"divert|diversion|leak|captured|seized from|looted|stolen|theft|sold|sale|resold|smuggl|deserter|defect|"
