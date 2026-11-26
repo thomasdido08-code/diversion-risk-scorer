@@ -4,7 +4,7 @@
 
 | File | Contents |
 |---|---|
-| `components.csv` | One row per state: `iso3`, `name`, `region`, `income` (World Bank groups), `arms_imp_tiv_m_2015on` (SIPRI arms imports 2015–25, TIV millions), `battle_deaths_2020on` (UCDP), the five components on a 0–1 scale (`gov_risk`, `conflict_risk`, `embargo_risk`, `neighbourhood_risk`, `att_risk`), `att_status` (`party`, `signatory`, `none`), `embargo_bodies` (e.g. `UN;EU`; empty if none), `embargo_note` |
+| `components.csv` | One row per state: `iso3`, `name`, `region`, `income` (World Bank groups), `arms_imp_tiv_m_2015on` (SIPRI arms imports 2015–25, TIV millions), `battle_deaths_2020on` (UCDP), the five components on a 0–1 scale (`gov_risk`, `conflict_risk`, `embargo_risk`, `neighbourhood_risk`, `att_risk`), `att_status` (`party`, `signatory`, `not_intending` (signed, then notified it will not become a party; scored as outside), `none`), `embargo_bodies` (e.g. `UN;EU`; empty if none), `embargo_note` |
 | `weights.json` | Base weights of the five components and the snapshot date |
 | `rank_ranges.csv` | `iso3`, `rank_p05`, `rank_p95`: 5th–95th percentile rank under perturbed weights |
 | `sensitivity.json` | `top10_overlap_avg`: average number of the base top 10 that stay in the top 10 under perturbed weights |

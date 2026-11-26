@@ -1,0 +1,39 @@
+# Blind validation (roadmap item 2)
+
+**Status, 25 November 2026: coding has started. No evaluation has been run, and none will be until coding and second coding are complete (PROTOCOL.md, section 7).**
+
+| File | What it is |
+|---|---|
+| `PROTOCOL.md` | The coding rules, fixed before coding (commit `Fix the blind-validation coding protocol before coding`). |
+| `reports.csv` | Every source in scope: 139 UN Panel and Group of Experts reports, 2015–2025, taken from each sanctions committee's own reports page on 25 November 2026, and 63 items from the Conflict Armament Research publications page (17 flagged as possible translations, 36 without a title in the listing). `status` tracks progress. |
+| `cases.csv` | Coded cases. One row per state × report × mechanism, with page, quote and URL. |
+| `excluded.csv` | Findings that name a state but are not cases under the protocol, with the reason. Kept so that exclusions can be checked too. |
+| `tools/candidates.py` | Downloads a report and lists candidate sentences with page numbers. It points the coder to passages; it does not code. |
+| `tools/ctx.py`, `tools/statescan.py` | Read the text around a phrase on a page; list pages where a state is named next to embargo-violation language. |
+| `candidates/` | Candidate lists for the reports processed so far. |
+
+## Progress
+
+- **Libya (9 reports): partly read.** The arms-embargo findings that name a state were checked in context. 10 cases coded (Sudan 2015 and 2016; UAE 2016 and 2019; Qatar 2016, for 2011 events; Jordan 2019; Türkiye 2019, 2021 and 2024; Libya leakage 2015) and 12 findings excluded. A full read of each report is still needed: for leakage from Libyan stocks, which the reports describe in many places without calling it a finding, and for transfers reported in tables and annexes. S/2024/914, annex 28, table 28.1 lists every transfer the Panel has confirmed since 2011 with the responsible state and the report that first found it (for example UAE AT-802i aircraft in S/2017/466 and Mirage 2000-9 in S/2021/229); use it as a checklist, but code each case from the original report.
+- **Yemen (12 reports): partly read.** 2 leakage cases from Yemeni state stocks (Scud missiles captured around Sana'a, S/2018/193; government-batch rifles on sale in Houthi areas, S/2024/731). 7 findings excluded, including Iran's: the Panel finds Iran failed to *prevent* the supply of Iranian-origin missiles and drone material (S/2018/594) and that "individuals or entities within" Iran sent weapons (S/2021/79), but does not establish that the Iranian government held or transferred them. **Decided 25 November 2026 (Thomas): the rule stands.** Failure-to-prevent findings and findings against non-state senders are not cases, so Iran has no Yemen case. The protocol is unchanged. The evaluation report will name Iran and these findings explicitly so readers can see what the rule leaves out.
+- **South Sudan (22 reports): partly read.** 5 re-transfer cases: Sudan's supply of the armed opposition (S/2016/70, S/2016/793) and of South Sudan's security bureau after the 2018 embargo (S/2020/342); Uganda's re-transfer of Israeli rifles without the exporter's consent (S/2016/70, S/2016/963). 5 findings excluded, mainly the presence of Uganda's own troops, which breaches the embargo but is not a transfer of materiel. Leakage from South Sudanese stocks to militias still needs a full read.
+- **Sudan (11 reports): partly read.** All have a text layer, so no OCR is needed (the October note was wrong). 4 cases: the Government of Sudan moving arms into Darfur without the required exemption (S/2015/31, S/2019/34, S/2021/40), and the UAE's military support to RSF through Am Djarass, which the Panel judges "credible" without a formal finding (S/2024/65, coded `probable`: **a close call for second coding**). 5 exclusions, including South Sudan's failure-to-prevent finding and Chad's transit role.
+- **DPRK (16 reports): arms sections partly read.** 1 case: KOMID components for a munitions factory in Namibia and small arms for the DRC Presidential Guard (S/2017/150). Interdicted shipments excluded.
+- **CAR list:** every item now has a title and publication date from its PDF; 19 translations are flagged so that no report is coded twice, leaving 44 publications to read.
+- Four Yemen reports are public only under their reissue symbols (S/2018/192, S/2018/193, S/2018/594, S/2020/326); the original symbols return a web page, not a PDF. `candidates.py` now refuses non-PDF downloads.
+- **Not started:** DR Congo, Central African Republic, Somalia, Mali, Haiti, and the 44 CAR publications.
+
+## What it takes to finish
+
+1. Run `python validation/tools/candidates.py --all` (about 2 GB of PDFs, cached in `validation/cache/`, not committed).
+2. Sudan reports have a text layer; no OCR needed. `candidates.py` flags any report with little text.
+3. **CAR reports** are coded by reading, not keyword: they describe tracing chains rather than "findings". Download links are in `reports.csv`.
+4. Code every report under PROTOCOL.md, then mark it `read`.
+5. Second coding: Thomas codes a random 20% of rows (fixed seed) and checks every `re-transfer` row; report Cohen's kappa.
+6. Only then run the evaluation in PROTOCOL.md, section 7.
+
+At the pace of the Libya tranche, a full read of the 139 UN reports is several weeks of part-time work. Mid-January is realistic for Libya, Yemen, Sudan, South Sudan and the DPRK arms sections, which hold most re-transfer findings; the leakage-heavy regimes (DRC, CAR, Somalia, Mali, Haiti) would follow.
+
+## A note on the October 2026 coding
+
+`COVERAGE.md` from 31 October said seven regimes had been read and coded, but the surviving `cases.csv` from that work held only 12 Libya rows, and its AUC figures cannot be traced to rows. That work is not used here (PROTOCOL.md, section 6). The two codings will be compared once Libya is fully read. One rule already differs: the protocol excludes findings about military aircraft or vessel movements where cargo is not established, such as the UAE's and Russia's aircraft landings in S/2021/229 (pp224, 228). The October coding counted the UAE row for 2021 on that basis; under this protocol, the UAE's 2021 case will rest on the Mirage 2000-9 transfer instead, if the report supports it.

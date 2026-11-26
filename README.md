@@ -20,7 +20,7 @@ Criterion 7 of EU Common Position 2008/944/CFSP asks exporting states to assess 
 | Conflict at home | 20% | Battle deaths 2020–24 (log-scaled) and political stability | UCDP via the World Bank; WGI |
 | Arms embargo | 10% | Full UN/EU embargo 1, partial 0.5, non-binding OSCE request 0.25 | UN, EU and OSCE lists, October 2026 |
 | Neighbourhood | 15% | Highest conflict score among land neighbours | Land borders; UCDP |
-| Outside the ATT | 15% | Arms Trade Treaty party 0, signatory 0.5, outside 1 | ATT Secretariat, February 2026 |
+| Outside the ATT | 15% | Arms Trade Treaty party 0, signatory 0.5, outside 1 (a signatory that has said it will not become a party counts as outside) | ATT Secretariat, February 2026; UN Treaty Collection |
 
 ```
 score = 100 × Σ weight × component      (weights normalised to sum to 1)
@@ -35,21 +35,21 @@ Full method, sources and limits: [METHODOLOGY.md](METHODOLOGY.md).
 
 - **Scores states, not licences.** A real Criterion 7 assessment looks at the end user and the item.
 - **Blind to deliberate re-transfer.** Governance data measures whether a state *can* control its arsenal, not whether it *chooses* to: the United Arab Emirates ranks 134th despite UN Panel findings on Libya.
-- **Weights are set by judgement**, not fitted, and the validation cases were chosen knowing the outcome, so validation is a sanity check, not a blind test.
+- **Weights are set by judgement**, not fitted, and the validation cases were chosen knowing the outcome, so validation is a sanity check, not a blind test. A blind validation is under way (`validation/`).
 - **Arms imports are from all suppliers**, not EU deliveries only.
 - **Coverage.** Taiwan and small territories without World Bank data are missing.
 
 ## Roadmap
 
-| # | Weak spot | Planned fix |
-|---|---|---|
-| 1 | Source figures were collected by hand | Script that pulls the World Bank API directly and compares with the current file |
-| 2 | Validation is circular | Code every recipient state named as a diversion source in Conflict Armament Research and UN Panel reports, 2015–2025, chosen blind |
-| 3 | Blind to deliberate re-transfer | New component: UN Panel findings of embargo breaches per state |
-| 4 | Arbitrary weights | Fit weights on the blind cases from #2; compare with an expert-survey average |
-| 5 | Governance and conflict overlap | Check correlations; merge or drop overlapping measures |
-| 6 | Imports from all suppliers | Use EU member-state deliveries by destination (EU COARM annual report) |
-| 7 | One score per country | Separate scores for small arms, light weapons and major systems |
+| # | Weak spot | Planned fix | Status (25 Nov 2026) |
+|---|---|---|---|
+| 1 | Source figures were collected by hand | Script that pulls the World Bank API directly and compares with the current file | **Done.** `scripts/pipeline/`: 0 mismatches in 1,736 values; ATT status checked against the UN Treaty Collection. Embargoes stay hand-coded. |
+| 2 | Validation is circular | Code every recipient state named as a diversion source in Conflict Armament Research and UN Panel reports, 2015–2025, chosen blind | **Under way.** Protocol fixed before coding; 202 sources listed; first Libya tranche coded. No evaluation until coding and second coding are complete. See `validation/README.md`. |
+| 3 | Blind to deliberate re-transfer | New component: UN Panel findings of embargo breaches per state | **Tested, not adopted.** At 10% the UAE moves from 134th to 83rd: an additive component cannot fix the blind spot without tuning. Proposed instead: a separate re-transfer flag. See METHODOLOGY.md. |
+| 4 | Arbitrary weights | Fit weights on the blind cases from #2; compare with an expert-survey average | Waits for #2 |
+| 5 | Governance and conflict overlap | Check correlations; merge or drop overlapping measures | **Checked.** Correlation 0.66; dropping conflict changes ranks little (0.989). Kept. |
+| 6 | Imports from all suppliers | Use EU member-state deliveries by destination (EU COARM annual report) | Not started |
+| 7 | One score per country | Separate scores for small arms, light weapons and major systems | Not started |
 
 ## Repository layout
 
@@ -60,11 +60,14 @@ data/raw/                     component inputs, weights, validation cases, borde
 data/derived/scores.json      the published edition the page loads
 data/derived/scores.csv       the same scores as a flat table (written by scripts/build.py)
 scripts/build.py              checks the data and refreshes scores.csv and the headline above
+scripts/pipeline/             pulls the inputs from their sources and diffs them against data/raw/
+scripts/retransfer_preview.py tests a re-transfer component without changing the scores
+validation/                   blind validation: protocol, report list, coded cases
 METHODOLOGY.md                method, sources and limits
 assets/                       bundled d3, topojson, world map and fonts
 ```
 
-The component inputs were assembled from the sources above on 30 October 2026. **The code that pulled and scaled them is not in this repository yet** (roadmap item 1), so the components themselves cannot be rebuilt from the original sources here.
+The component inputs were assembled from the sources above on 30 October 2026. `scripts/pipeline/` pulls the same inputs from the World Bank API and the UN Treaty Collection and compares them with the hand-collected file: they match exactly (see [scripts/pipeline/README.md](scripts/pipeline/README.md)). Embargo levels are hand-coded.
 
 ## Run it
 
