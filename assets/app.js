@@ -3,7 +3,7 @@ const COMP = [
   {k:"conflict", c:"conflict_risk", label:"Conflict at home", col:"--c-conf", src:"UCDP 2020–24 · WGI PV", hint:"Battle deaths + political instability"},
   {k:"embargo", c:"embargo_risk", label:"Arms embargo", col:"--c-emb", src:"UN / EU / OSCE · Oct 2026", hint:"Full 1 · partial 0.5 · OSCE 0.25"},
   {k:"neighbourhood", c:"neighbourhood_risk", label:"Neighbourhood", col:"--c-nb", src:"Land borders · UCDP", hint:"Worst conflict among land neighbours"},
-  {k:"att", c:"att_risk", label:"Outside the ATT", col:"--c-att", src:"ATT Secretariat · Feb 2026", hint:"Party 0 · signatory 0.5 · outside 1"}
+  {k:"att", c:"att_risk", label:"Outside the ATT", col:"--c-att", src:"ATT Secretariat · Feb 2026", hint:"Party 0 · signatory 0.5 · outside 1 (incl. signatories that said they will not join)"}
 ];
 const BASE = {...DATA.weights};
 let W = {...BASE}, view = "map", metric = "risk", sortKey = null, sortDir = 1, sel = DATA.countries[0].iso3, lvlFilter = new Set();
@@ -51,7 +51,7 @@ function renderChips(){
 }
 function filtered(){
   const q=$("#omni").value.trim().toLowerCase(), rg=$("#region").value, at=$("#att").value;
-  return DATA.countries.filter(d=>(!q||d.name.toLowerCase().includes(q)||d.iso3.toLowerCase()===q)&&(!rg||d.region===rg)&&(!at||d.att_status===at)&&(!lvlFilter.size||lvlFilter.has(level(d.s)[0])));
+  return DATA.countries.filter(d=>(!q||d.name.toLowerCase().includes(q)||d.iso3.toLowerCase()===q)&&(!rg||d.region===rg)&&(!at||d.att_status===at||(at==="none"&&d.att_status==="not_intending"))&&(!lvlFilter.size||lvlFilter.has(level(d.s)[0])));
 }
 function renderList(){
   const k=metric==="exp"?"er":"r";
@@ -123,7 +123,7 @@ function renderTable(){
     <td class="n">${m?`<span class="d ${m>0?"up":"dn"}">${m>0?"▲":"▼"}${Math.abs(m)}</span>`:`<span class="d" style="color:var(--t3)">–</span>`}</td>
     <td><div class="bars">${COMP.map((p,i)=>`<i style="width:${d.parts[i]}%;background:var(${p.col})"></i>`).join("")}</div></td>
     <td class="n" style="color:var(--t2)">${d.rank_p05}–${d.rank_p95}</td>
-    <td><span class="pill ${d.att_status==="none"?"r":d.att_status==="party"?"g":""}">${d.att_status==="none"?"OUTSIDE":d.att_status.toUpperCase()}</span></td>
+    <td><span class="pill ${d.att_status==="none"||d.att_status==="not_intending"?"r":d.att_status==="party"?"g":""}"${d.att_status==="not_intending"?' title="Signed, then notified the UN it will not become a party"':""}>${d.att_status==="none"?"OUTSIDE":d.att_status==="not_intending"?"OUTSIDE*":d.att_status.toUpperCase()}</span></td>
     <td>${d.embargo_risk?`<span class="pill v">${d.embargo_bodies.replace(/;/g,"+")}${d.embargo_risk<1?" · PARTIAL":""}</span>`:""}</td>
     <td class="n">${fmt(d.arms_imp_tiv_m_2015on)}</td><td class="n">${fmt(d.e)}</td></tr>`;}).join("");
   document.querySelectorAll("#tbody tr").forEach(tr=>{const go=()=>select(tr.dataset.i);tr.addEventListener("click",go);tr.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();go();}});});
@@ -173,7 +173,7 @@ function renderObj(){
       <div>Battle deaths 2020–24</div><div class="mono">${fmt(d.battle_deaths_2020on)}</div>
       <div>Arms imports 2015–25</div><div class="mono">${fmt(d.arms_imp_tiv_m_2015on)} TIV m</div>
       <div>Exposure</div><div class="mono">${fmt(d.e)}</div>
-      <div>ATT status</div><div>${d.att_status==="none"?"Outside the treaty":d.att_status==="party"?"State party":"Signatory, not ratified"}</div>
+      <div>ATT status</div><div>${d.att_status==="none"?"Outside the treaty":d.att_status==="not_intending"?"Signed, then notified the UN it will not become a party: scored as outside":d.att_status==="party"?"State party":"Signatory, not ratified"}</div>
       <div>Embargo</div><div>${d.embargo_note||"None in force"}</div>
     </div></div>
     <div class="sec" style="border-bottom:0"><div class="sh">Linked objects <span class="mono" style="font-weight:400;color:var(--t2)">${ns.length} land neighbours</span></div>
@@ -205,7 +205,7 @@ function renderMethod(){
       <li><b>Conflict at home 20%</b>: half log-scaled battle deaths 2020–24, half WGI Political Stability.</li>
       <li><b>Arms embargo 10%</b>: full UN/EU embargo 1, non-state-forces or targeted 0.5, non-binding OSCE request 0.25.</li>
       <li><b>Neighbourhood 15%</b>: highest conflict score among land neighbours. Islands score 0.</li>
-      <li><b>Outside the ATT 15%</b>: party 0, signatory 0.5, outside 1.</li>
+      <li><b>Outside the ATT 15%</b>: party 0, signatory 0.5, outside 1. A signatory that has notified the UN it will not become a party counts as outside (the United States, 2019).</li>
     </ul>
     <h3>Sources</h3>
     <ul>
@@ -223,7 +223,7 @@ function renderMethod(){
       <li>Arms imports are from all suppliers, not EU deliveries only.</li>
       <li>Taiwan and small territories without World Bank data are missing.</li>
       <li>UCDP counts deaths where fighting happens: Israel reflects Gaza, Russia only fighting on its own territory.</li>
-      <li>Static snapshot dated 30 October 2026.</li>
+      <li>Static snapshot dated 30 October 2026; US treaty status updated 26 November 2026.</li>
     </ul>`;
 }
 

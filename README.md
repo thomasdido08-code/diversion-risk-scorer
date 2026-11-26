@@ -20,7 +20,7 @@ Criterion 7 of EU Common Position 2008/944/CFSP asks exporting states to assess 
 | Conflict at home | 20% | Battle deaths 2020–24 (log-scaled) and political stability | UCDP via the World Bank; WGI |
 | Arms embargo | 10% | Full UN/EU embargo 1, partial 0.5, non-binding OSCE request 0.25 | UN, EU and OSCE lists, October 2026 |
 | Neighbourhood | 15% | Highest conflict score among land neighbours | Land borders; UCDP |
-| Outside the ATT | 15% | Arms Trade Treaty party 0, signatory 0.5, outside 1 | ATT Secretariat, February 2026 |
+| Outside the ATT | 15% | Arms Trade Treaty party 0, signatory 0.5, outside 1 (a signatory that has said it will not become a party counts as outside) | ATT Secretariat, February 2026; UN Treaty Collection |
 
 ```
 score = 100 × Σ weight × component      (weights normalised to sum to 1)

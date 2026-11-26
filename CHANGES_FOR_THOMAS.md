@@ -1,6 +1,6 @@
 # Changes for Thomas: Diversion Risk Scorer
 
-What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to defend it. **No score or rank changed.** The headline (Sudan first, UAE 134th, leakage 95th vs re-transfer 76th percentile) is exactly as published.
+What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to defend it. **One score changed, on your decision of 26 November: the United States** (below). The headline (top 10, Sudan first, UAE 134th, leakage 95th vs re-transfer 76th percentile) is exactly as published.
 
 ## Roadmap #1: the input pipeline (done)
 
@@ -12,7 +12,7 @@ What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to de
 - *Sceptic: "Embargoes?"* → Still hand-coded: no single official machine-readable list covers UN, EU and OSCE measures with their scope. The sources to check them against are listed in `scripts/pipeline/README.md`.
 - *Sceptic: "UCDP via the World Bank lags."* → Yes, battle deaths run to 2024. UCDP's own API now needs a token. The lag is stated.
 
-**A point to decide.** The UN Treaty Collection shows the United States as a signatory, which is what the index uses (0.5). In 2019 the US told the depositary it does not intend to become a party. You could defend scoring it 1 ("outside the treaty"). I left it unchanged; it is your call, and it would move the US up.
+**Decided 26 November: the US counts as outside the ATT.** See the section below.
 
 ## Roadmap #2: blind validation (under way)
 
@@ -41,8 +41,8 @@ What changed on branch `iaw-prep-2026-12` (25 November 2026), why, and how to de
 
 | State | Now | 5% | 10% | 15% |
 |---|---|---|---|---|
-| UAE | 134 | 107 | 83 | 70 |
-| Qatar | 100 | 89 | 79 | 74 |
+| UAE | 134 | 108 | 83 | 70 |
+| Qatar | 101 | 89 | 79 | 74 |
 | Jordan | 54 | 42 | 35 | 30 |
 | Türkiye | 41 | 36 | 29 | 22 |
 | Uganda | 28 | 19 | 14 | 9 |
@@ -61,9 +61,29 @@ Governance and conflict correlate at 0.66 (Spearman 0.77), partly by constructio
 
 - *Sceptic: "You count instability twice."* → Partly, and it barely matters: removing the conflict component entirely changes the ranking very little.
 
+## The United States and the ATT (decided 26 November)
+
+**What.** New rule: a signatory that has notified the depositary that it does not intend to become a party counts as outside the treaty (1, not 0.5). Only the US is affected. Its notice was received by the UN Secretary-General on 18 July 2019 and is footnoted on the UN Treaty Collection page (retrieved 25 November). `fetch_att.py` now reads those footnotes and records the status `not_intending`.
+
+| | Before | After |
+|---|---|---|
+| US score | 30.2 | **37.7** |
+| US rank | 130th | **92nd** |
+| US rank range | 118–142 | 76–126 |
+| US exposure | 2,403 (15th) | 3,000 (11th) |
+| States ranked 92nd–130th | – | each down one place (38 states) |
+| Top 10, validation percentiles, top-10 overlap | – | unchanged |
+
+**Rank ranges.** The October code that computed them used pandas and lived only in your local folder. It is now `scripts/rank_ranges.py`, standard library. Run on your October inputs at full precision, it reproduces all 205 published ranges exactly, so the new ranges come from the same method. On the three-decimal values in `components.csv`, 21 ranges differ by one rank; that is stated in the script and METHODOLOGY.md.
+
+**A correction found on the way.** The re-transfer preview said the UAE reaches 28th at 25% weight. It is 29th, before and after the US change. Fixed.
+
+- *Sceptic: "The UN still lists the US as a signatory."* → It does, with a footnote recording the 2019 notice. Signing obliges a state not to defeat the treaty's purpose until it makes clear it will not ratify (Vienna Convention, Article 18). The US has made that clear, so scoring it as a signatory would give it credit for a commitment it has withdrawn.
+- *Sceptic: "Isn't this a political choice about one country?"* → It is a general rule, applied mechanically from the depositary's record. It happens to affect only the US today.
+
 ## Ready to go public?
 
-**Not yet.** Before publishing I would: (1) decide the US ATT question; (2) get the validation to at least the re-transfer-heavy regimes, so that "blind validation under way" is backed by real numbers.
+**Not yet.** The US ATT question is settled (26 Nov). Before publishing I would still get the validation to at least the re-transfer-heavy regimes, so that "blind validation under way" is backed by real numbers.
 
 **Publication check (done 25 Nov):** no secrets or local paths; licence files present for the code, d3, topojson and the IBM Plex fonts; every script, style and data path in the page is relative, so it works under GitHub Pages; the page renders from a local server with no console errors.
 

@@ -120,8 +120,10 @@ def main():
     for iso in sorted(set(old) | set(new)):
         if old.get(iso, "none") != new.get(iso, "none"):
             r = untc.get(iso, {})
-            add("att", iso, "status", old.get(iso, "none"), new.get(iso, "none"),
-                f"signed {r.get('signed', '')}; deposit {r.get('deposit', '')}; in force {r.get('in_force', '')}")
+            note = f"signed {r.get('signed', '')}; deposit {r.get('deposit', '')}; in force {r.get('in_force', '')}"
+            if new.get(iso) == "not_intending":
+                note += "; notified the depositary it does not intend to become a party: scored as outside (rule adopted 26 Nov 2026)"
+            add("att", iso, "status", old.get(iso, "none"), new.get(iso, "none"), note)
 
     # ---- components
     comp_file = {r["iso3"]: r for r in csv.DictReader(open(os.path.join(RAW, "components.csv"), encoding="utf-8"))}

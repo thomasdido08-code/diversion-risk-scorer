@@ -11,9 +11,10 @@ entry into force for that state (deposit + 90 days, Article 22(2), or
 status used by the index on --as-of:
   party      the treaty is in force for the state
   signatory  signed, no instrument deposited, or deposited but not yet in force
+  not_intending  signed, then notified the depositary that it does not intend
+             to become a party (read from the page's footnotes; since 2019
+             only the United States). Scored as outside the treaty.
   none       not listed
-Footnotes on the UNTC page (for example the United States' 2019 notice that
-it does not intend to become a party) are not read; see METHODOLOGY.md.
 Standard library only.
 """
 import argparse
@@ -62,6 +63,22 @@ def date(s):
     return dt.date(int(m.group(3)), MONTHS[m.group(2)], int(m.group(1))) if m else None
 
 
+def not_intending(page):
+    """Participants whose footnote says they do not intend to become a party.
+
+    The UNTC footnote reads, for example: "In a communication received on
+    18 July 2019, the Government of the United States of America informed the
+    Secretary-General ... that the United States does not intend to become a
+    party to the treaty." Returns {normalised participant name: date received}.
+    """
+    text = cell(page)
+    out = {}
+    for m in re.finditer(r"communication received on (\d{1,2} \w+ \d{4}), the Government of (?:the )?(.+?) informed"
+                         r"[^.]{0,300}?not intend to become a party", text):
+        out[norm(m.group(2))] = m.group(1)
+    return out
+
+
 def iso_lookup():
     """World Bank names from the latest API pull, plus UNTC spellings."""
     api = os.path.join(ROOT, "data", "raw", "api")
@@ -78,10 +95,16 @@ def iso_lookup():
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--as-of", default=dt.date.today().isoformat())
+    p.add_argument("--page", help="read a saved copy of the UNTC page instead of downloading it")
+    p.add_argument("--retrieved", default=dt.date.today().isoformat(), help="retrieval date of --page")
     a = p.parse_args()
     as_of = dt.date.fromisoformat(a.as_of)
-    req = urllib.request.Request(URL, headers={"User-Agent": "diversion-risk-scorer research script"})
-    page = urllib.request.urlopen(req, timeout=120).read().decode("utf-8", errors="replace")
+    if a.page:
+        page = open(a.page, encoding="utf-8", errors="replace").read()
+    else:
+        req = urllib.request.Request(URL, headers={"User-Agent": "diversion-risk-scorer research script"})
+        page = urllib.request.urlopen(req, timeout=120).read().decode("utf-8", errors="replace")
+    notices = not_intending(page)
     table = page[page.find("tblgrid"):]
     table = table[:table.find("</table>")]
     names = iso_lookup()
@@ -104,18 +127,21 @@ def main():
             status = "none"
         key = norm(name)
         iso = names.get(key, "")
+        if status == "signatory" and not deposit and key in notices:
+            status = "not_intending"
         if key not in names:
             unmatched.append(name)
         rows.append({"participant": name, "iso3": iso or "", "signed": signed or "", "deposit": deposit or "",
                      "deposit_type": tds[3].split()[-1] if deposit and tds[3].split()[-1] in ("a", "A", "AA") else ("ratification" if deposit else ""),
                      "in_force": in_force or "", "status": status})
-    out = os.path.join(ROOT, "data", "raw", "api", f"att_untc_{dt.date.today().isoformat()}.csv")
+    out = os.path.join(ROOT, "data", "raw", "api", f"att_untc_{a.retrieved}.csv")
     with open(out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    n = {s: sum(1 for r in rows if r["status"] == s) for s in ("party", "signatory")}
-    print(f"{len(rows)} participants as of {as_of}: {n['party']} parties, {n['signatory']} signatories -> {out}")
+    n = {s: sum(1 for r in rows if r["status"] == s) for s in ("party", "signatory", "not_intending")}
+    print(f"{len(rows)} participants as of {as_of}: {n['party']} parties, {n['signatory']} signatories, "
+          f"{n['not_intending']} not intending to become a party -> {out}")
     if unmatched:
         print("No ISO3 code for:", "; ".join(unmatched))
 

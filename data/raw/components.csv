@@ -129,7 +129,7 @@ HKG,"Hong Kong SAR, China",East Asia & Pacific,High income,0,0,0.226,0.173,0.0,0
 GRC,Greece,Europe & Central Asia,High income,3586,0,0.443,0.222,0.0,0.587,0.0,party,,
 BHR,Bahrain,"Middle East, North Africa, Afghanistan & Pakistan",High income,1811,0,0.441,0.283,0.0,0.0,0.5,signatory,,
 POL,Poland,Europe & Central Asia,High income,6298,2,0.352,0.224,0.0,0.772,0.0,party,,
-USA,United States,North America,High income,7957,0,0.31,0.28,0.0,0.311,0.5,signatory,,
+USA,United States,North America,High income,7957,0,0.31,0.28,0.0,0.311,1.0,not_intending,,
 CYM,Cayman Islands,Latin America & Caribbean,High income,0,0,0.325,0.101,0.0,0.0,1.0,none,,
 BLZ,Belize,Latin America & Caribbean,Upper middle income,3,0,0.547,0.169,0.0,0.311,0.0,party,,
 ARE,United Arab Emirates,"Middle East, North Africa, Afghanistan & Pakistan",High income,10871,3,0.312,0.222,0.0,0.358,0.5,signatory,,
